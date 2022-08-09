@@ -10,17 +10,22 @@ alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 
 algorism = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
+symbols = ["!", "@", "#", "$", "%", "&", "¥", "£", "€"]
+
 input_MAC = []
 
 while len(input_MAC) != str_length:
-    picker = random.randint(1, 3)
+    picker = random.randint(1, 4)
     alphabet_chooser = random.randint(0, 25)
     algorism_chooser = random.randint(0, 9)
+    symbols_chooser = random.randint(0, 8)
 
     if picker == 1:
         input_MAC.append(alphabet[alphabet_chooser])
     elif picker == 2:
         input_MAC.append(alphabet[alphabet_chooser].upper())
+    elif picker == 3:
+        input_MAC.append(symbols[symbols_chooser])
     else:
         input_MAC.append(algorism[algorism_chooser])
 
