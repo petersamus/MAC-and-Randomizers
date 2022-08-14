@@ -3,34 +3,38 @@
 
 import random
 
-str_length = random.randint(8, 20)
 
-alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+def random_password():
 
-algorism = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+    str_length = random.randint(8, 20)
 
-symbols = ["!", "@", "#", "$", "%", "&", "¥", "£", "€"]
+    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+                "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-input_MAC = []
+    algorism = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
-while len(input_MAC) != str_length:
-    picker = random.randint(1, 4)
-    alphabet_chooser = random.randint(0, 25)
-    algorism_chooser = random.randint(0, 9)
-    symbols_chooser = random.randint(0, 8)
+    symbols = ["!", "@", "#", "$", "%", "&", "¥", "£", "€"]
 
-    if picker == 1:
-        input_MAC.append(alphabet[alphabet_chooser])
-    elif picker == 2:
-        input_MAC.append(alphabet[alphabet_chooser].upper())
-    elif picker == 3:
-        input_MAC.append(symbols[symbols_chooser])
-    else:
-        input_MAC.append(algorism[algorism_chooser])
+    input_MAC = []
+
+    while len(input_MAC) != str_length:
+        picker = random.randint(1, 4)
+        alphabet_chooser = random.randint(0, 25)
+        algorism_chooser = random.randint(0, 9)
+        symbols_chooser = random.randint(0, 8)
+
+        if picker == 1:
+            input_MAC.append(alphabet[alphabet_chooser])
+        elif picker == 2:
+            input_MAC.append(alphabet[alphabet_chooser].upper())
+        elif picker == 3:
+            input_MAC.append(symbols[symbols_chooser])
+        else:
+            input_MAC.append(algorism[algorism_chooser])
+
+    return "".join(input_MAC)
 
 
-output_MAC = "".join(input_MAC)
+output_MAC = random_password()
+
 print(output_MAC)
-
-# Plans to def it in the future and further improve.
